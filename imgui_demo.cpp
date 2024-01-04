@@ -3021,7 +3021,7 @@ static void ShowDemoWindowMultiSelect()
 
                 ImGuiListClipper clipper;
                 clipper.Begin(ITEMS_COUNT);
-                if (ms_io->RangeSrcItem > 0)
+                if (ms_io->RangeSrcItem != -1)
                     clipper.IncludeItemByIndex((int)ms_io->RangeSrcItem); // Ensure RangeSrc item is not clipped.
                 while (clipper.Step())
                 {
@@ -3272,7 +3272,7 @@ static void ShowDemoWindowMultiSelect()
                     clipper.Begin(items.Size);
                     if (item_curr_idx_to_focus != -1)
                         clipper.IncludeItemByIndex(item_curr_idx_to_focus); // Ensure focused item is not clipped.
-                    if (ms_io->RangeSrcItem > 0)
+                    if (ms_io->RangeSrcItem != -1)
                         clipper.IncludeItemByIndex((int)ms_io->RangeSrcItem); // Ensure RangeSrc item is not clipped.
                 }
 
